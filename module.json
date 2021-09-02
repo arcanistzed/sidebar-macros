@@ -1,0 +1,48 @@
+{
+  "name": "sidebar-macros",
+  "title": "Sidebar Macros",
+  "description": "Add Macros to the Foundry VTT sidebar!",
+  "version": "This is auto replaced",
+  "manifestPlusVersion": "1.2.0",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": "0.8.9",
+  "author": "arcanist",
+  "authors": [
+    {
+      "name": "arcanist",
+      "url": "https://arcanistzed.github.io/",
+      "email": "arcanistzed@gmail.com",
+      "discord": "arcanist#4317",
+      "reddit": "u/arcanistzed"
+    }
+  ],
+  "scripts": [
+    "scripts/module.js"
+  ],
+  "keywords": [
+    "sidebar",
+    "directory",
+    "script",
+    "macros",
+    "simple"
+  ],
+  "url": "This is auto replaced",
+  "manifest": "This is auto replaced",
+  "download": "This is auto replaced",
+  "readme": "https://github.com/arcanistzed/sidebar-macros/blob/main/README.md",
+  "changelog": "https://github.com/arcanistzed/sidebar-macros/blob/main/CHANGELOG.md",
+  "license": "https://github.com/arcanistzed/sidebar-macros/blob/main/LICENSE",
+  "bugs": "https://github.com/arcanistzed/sidebar-macros/issues/new/choose",
+  "media": [
+    {
+      "type": "screenshot",
+      "url": "https://i.imgur.com/b4GWLoz.png",
+      "caption": "The macro directory in the sidebar, the context menu, and the editor window."
+    },
+    {
+      "type": "cover",
+      "url": "https://i.imgur.com/QpsAvuw.png",
+      "caption": "Macros in the Sidebar"
+    }
+  ]
+}
