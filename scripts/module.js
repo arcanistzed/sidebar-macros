@@ -13,7 +13,7 @@ Hooks.on("renderSidebarTab", (doc, html) => {
 // Update appearance whenever the sidebar is expanded or collapsed
 Hooks.on("collapseSidebar", (_sidebar, collapsed) => onCollapse(collapsed));
 
-// Adjust the sidebar appearance initially as uncollapsed
+// Adjust the sidebar appearance initially as un-collapsed
 Hooks.on("renderSidebar", () => onCollapse(false));
 
 /**
