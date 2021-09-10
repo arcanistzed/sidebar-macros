@@ -53,8 +53,7 @@ const createDirectory = html => {
 
     // Add icon for tab
     const icon = document.createElement("i");
-    icon.classList.add("fas")
-    icon.classList.add("fa-code");
+    icon.setAttribute("class", CONFIG.Macro.sidebarIcon);
     tab.append(icon);
 
     // Add Macro tab to sidebar before compendiums if it's not already there
