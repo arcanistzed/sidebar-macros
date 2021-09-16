@@ -28,8 +28,8 @@ const onCollapse = collapsed => {
         // Make sure it's narrow again
         document.querySelector("#sidebar").style.width = "30px";
     } else {
-        // Resize sidebar to leave room for the additional tab
-        document.querySelector("#sidebar").style.width = "330px";
+        // Resize sidebar to leave room for the additional tab if GM
+        if (game.user.isGM) document.querySelector("#sidebar").style.width = "330px";
     };
 };
 
@@ -41,6 +41,8 @@ const createDirectory = html => {
 
     // Move Macros directory to sidebar if there isn't already one there
     if (document.querySelectorAll("#macros").length <= 1) document.querySelector("#sidebar").append(html);
+
+    document.querySelector("#macros").classList.add("tab");
 
     // Make the directory display properly and not all of the time
     html.style.display = "";
@@ -61,7 +63,7 @@ const createDirectory = html => {
 };
 
 // Override default macro class as the UI for macros
-Hooks.on("init", () => CONFIG.ui.macros = MacroSidebarDirectory);
+Hooks.on("setup", () => CONFIG.ui.macros = MacroSidebarDirectory);
 
 
 // The following code was largely taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
@@ -75,16 +77,12 @@ Hooks.on("init", () => CONFIG.ui.macros = MacroSidebarDirectory);
  * @see {@link MacroConfig}     The Macro Configuration Sheet
  */
 class MacroSidebarDirectory extends SidebarDirectory {
+    constructor(options = {}) {
+        super(options);
+        ui.sidebar.tabs.macros = this;
+        game.macros.apps.push(this);
+    }
+
     /** @override */
     static documentName = "Macro";
-
-    /* -------------------------------------------- */
-
-    /** @override */
-    async _onCreate(event) {
-        event.preventDefault();
-        const name = game.i18n.format("ENTITY.New", { entity: game.i18n.localize("ENTITY.Macro") });
-        const macro = await Macro.create({ name, type: "chat", scope: "global" }, { temporary: true });
-        macro.sheet.render(true);
-    }
 }
