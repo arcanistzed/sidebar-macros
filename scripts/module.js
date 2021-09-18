@@ -28,8 +28,8 @@ const onCollapse = collapsed => {
         // Make sure it's narrow again
         document.querySelector("#sidebar").style.width = "30px";
     } else {
-        // Resize sidebar to leave room for the additional tab if GM
-        if (game.user.isGM) document.querySelector("#sidebar").style.width = "330px";
+        // Resize sidebar to leave room for the additional tab if GM and is not v9
+        if (game.user.isGM && !game.release?.generation) document.querySelector("#sidebar").style.width = "330px";
     };
 };
 
