@@ -11,11 +11,16 @@ Hooks.on("init", () => {
 });
 
 // Hook into the sidebar rendering
-Hooks.on("renderSidebar", () => {
-    // Reduce tab width if GM
-    if (game.user.isGM) {
-        document.querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width", "21px");
+Hooks.on("renderSidebar", (_app, html) => {
+    // Add CSS variables if not v9
+    if (!isNewerVersion(game.version, "9.0")) {
+        html[0].style.setProperty("--sidebar-width", getComputedStyle(html[0]).width);
+        html[0].querySelectorAll("#sidebar-tabs > .item ").forEach(el => el.style.flex = "0 0 var(--sidebar-tab-width)");
     };
+
+    // Calculate new tab width
+    html[0].querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width",
+        Math.floor(parseInt(getComputedStyle(html[0]).getPropertyValue("--sidebar-width")) / (document.querySelector("#sidebar-tabs").childElementCount + 1)) - 1 + "px");
 });
 
 // Hook into the sidebar tab rendering
