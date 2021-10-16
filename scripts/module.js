@@ -1,3 +1,11 @@
+// Hook into the sidebar rendering
+Hooks.on("renderSidebar", () => {
+    // Reduce tab width if GM
+    if (game.user.isGM) {
+        document.querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width", "21px");
+    };
+});
+
 // Hook into the sidebar tab rendering
 Hooks.on("renderSidebarTab", (doc, html) => {
     // If we are rendering the "macros" sidebar tab
@@ -7,30 +15,13 @@ Hooks.on("renderSidebarTab", (doc, html) => {
     };
 });
 
-// Remove default Macro directory button
-Hooks.on("renderHotbar", () => document.querySelector("#macro-directory").style.display = "none");
+// Hook into the macro hotbar rendering
+Hooks.on("renderHotbar", (_app, html) => {
+    // Remove default Macro directory button
+    html[0].querySelector("#macro-directory").style.display = "none";
 
-/* // Update appearance whenever the sidebar is expanded or collapsed
-Hooks.on("collapseSidebar", (_sidebar, collapsed) => onCollapse(collapsed));
 
-// Adjust the sidebar appearance initially as un-collapsed
-Hooks.on("renderSidebar", () => onCollapse(false));
-
-/**
- * Executes whenever the sidebar is collapsed or expanded
- * @param {Boolean} collapsed - Whether the sidebar is collapsed or not
- \
-const onCollapse = collapsed => {
-    if (collapsed) {
-        // Resize collapsed sidebar to leave room for the additional icon
-        document.querySelector("#sidebar").style.height = "auto";
-    } else {
-        // Reduce tab width if GM
-        if (game.user.isGM) {
-            document.querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width", "21px");
-        };
-    };
-}; */
+});
 
 /**
  * Create the Macro directory in the sidebar
@@ -62,7 +53,7 @@ const createDirectory = html => {
 };
 
 // Override default macro class as the UI for macros
-Hooks.on("setup", () => CONFIG.ui.macros = MacroSidebarDirectory);
+Hooks.on("init", () => CONFIG.ui.macros = MacroSidebarDirectory);
 
 // Register with Permission Viewer
 Hooks.on('renderMacroSidebarDirectory', (...args) => {
