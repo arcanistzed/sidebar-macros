@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 - 16 Oct 2021
+
+Check if Permission Viewer is active before registering
+Hide macro hotbar (there is an option to show it in settings)
+More reliable calculation of tab width
+
 ## 0.3.0 - 16 Oct 2021
 
 Permission Viewer compatibility
