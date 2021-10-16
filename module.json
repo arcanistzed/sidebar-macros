@@ -17,7 +17,14 @@
     }
   ],
   "scripts": [
-    "scripts/module.js"
+    "scripts/sidebar-macros.js"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    }
   ],
   "keywords": [
     "sidebar",
