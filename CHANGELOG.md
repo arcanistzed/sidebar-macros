@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 - 16 Oct 2021 - V9
+
+- Remove macro directory button correctly
+- Make the sidebar tabs smaller, not the sidebar wider, just like the card tab
+
 ## 0.1.2 - 6 Sept 2021
 
 Fixed Macro sidebar not appearing
