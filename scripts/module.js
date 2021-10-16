@@ -4,11 +4,11 @@ Hooks.on("renderSidebarTab", (doc, html) => {
     if (doc.tabName === "macros") {
         // Create the Macro directory
         createDirectory(html[0]);
-
-        // Remove default Macro directory button
-        document.querySelector("#macro-directory").style.display = "none";
     };
 });
+
+// Remove default Macro directory button
+Hooks.on("renderHotbar", () => document.querySelector("#macro-directory").style.display = "none");
 
 // Update appearance whenever the sidebar is expanded or collapsed
 Hooks.on("collapseSidebar", (_sidebar, collapsed) => onCollapse(collapsed));
@@ -24,12 +24,11 @@ const onCollapse = collapsed => {
     if (collapsed) {
         // Resize collapsed sidebar to leave room for the additional icon
         document.querySelector("#sidebar").style.height = "auto";
-
-        // Make sure it's narrow again
-        document.querySelector("#sidebar").style.width = "30px";
     } else {
-        // Resize sidebar to leave room for the additional tab if GM and is not v9
-        if (game.user.isGM && !game.release?.generation) document.querySelector("#sidebar").style.width = "330px";
+        // Reduce tab width if GM
+        if (game.user.isGM) {
+            document.querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width", "21px");
+        };
     };
 };
 
