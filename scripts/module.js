@@ -64,6 +64,9 @@ const createDirectory = html => {
 // Override default macro class as the UI for macros
 Hooks.on("setup", () => CONFIG.ui.macros = MacroSidebarDirectory);
 
+// Register with Permission Viewer
+Hooks.on('renderMacroSidebarDirectory', PermissionViewer?.directoryRendered);
+
 
 // The following code was largely taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
 /**

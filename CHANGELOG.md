@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0 - 16 Oct 2021
+
+Permission Viewer compatibility
+
 ## 0.2.0 - 16 Oct 2021 - V9
 
 - Remove macro directory button correctly
