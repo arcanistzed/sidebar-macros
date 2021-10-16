@@ -10,7 +10,7 @@ Hooks.on("renderSidebarTab", (doc, html) => {
 // Remove default Macro directory button
 Hooks.on("renderHotbar", () => document.querySelector("#macro-directory").style.display = "none");
 
-// Update appearance whenever the sidebar is expanded or collapsed
+/* // Update appearance whenever the sidebar is expanded or collapsed
 Hooks.on("collapseSidebar", (_sidebar, collapsed) => onCollapse(collapsed));
 
 // Adjust the sidebar appearance initially as un-collapsed
@@ -19,7 +19,7 @@ Hooks.on("renderSidebar", () => onCollapse(false));
 /**
  * Executes whenever the sidebar is collapsed or expanded
  * @param {Boolean} collapsed - Whether the sidebar is collapsed or not
- */
+ \
 const onCollapse = collapsed => {
     if (collapsed) {
         // Resize collapsed sidebar to leave room for the additional icon
@@ -30,7 +30,7 @@ const onCollapse = collapsed => {
             document.querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width", "21px");
         };
     };
-};
+}; */
 
 /**
  * Create the Macro directory in the sidebar
@@ -65,7 +65,11 @@ const createDirectory = html => {
 Hooks.on("setup", () => CONFIG.ui.macros = MacroSidebarDirectory);
 
 // Register with Permission Viewer
-Hooks.on('renderMacroSidebarDirectory', PermissionViewer?.directoryRendered);
+Hooks.on('renderMacroSidebarDirectory', (...args) => {
+    if (game.modules.get("permission_viewer")?.active) {
+        PermissionViewer.directoryRendered(...args);
+    };
+});
 
 
 // The following code was largely taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
