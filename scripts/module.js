@@ -1,3 +1,15 @@
+// Register settings
+Hooks.on("init", () => {
+    game.settings.register("sidebar-macros", "hideMacroHotbar", {
+        name: "Hide Macro Hotbar",
+        scope: "client",
+        config: true,
+        type: Boolean,
+        default: true,
+        onChange: () => { ui.hotbar.render() },
+    });
+});
+
 // Hook into the sidebar rendering
 Hooks.on("renderSidebar", () => {
     // Reduce tab width if GM
@@ -20,7 +32,8 @@ Hooks.on("renderHotbar", (_app, html) => {
     // Remove default Macro directory button
     html[0].querySelector("#macro-directory").style.display = "none";
 
-
+    // If enabled, close the hotbar
+    if (game.settings.get("sidebar-macros", "hideMacroHotbar")) html[0].style.display = "none";
 });
 
 /**
