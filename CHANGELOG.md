@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.1
+
+## Fixed
+
+Fixed version check for v9, causing external CSS variable changes to have no effect
+
 ## 0.4.0 - 16 Oct 2021
 
 Check if Permission Viewer is active before registering
