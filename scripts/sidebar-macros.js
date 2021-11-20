@@ -13,7 +13,7 @@ Hooks.on("init", () => {
 // Hook into the sidebar rendering
 Hooks.on("renderSidebar", (_app, html) => {
     // Add CSS variables if not v9
-    if (!isNewerVersion(game.version, "9.0")) {
+    if ((game.version && !isNewerVersion(game.version, 9)) ?? true) {
         html[0].style.setProperty("--sidebar-width", getComputedStyle(html[0]).width);
         html[0].querySelectorAll("#sidebar-tabs > .item ").forEach(el => el.style.flex = "0 0 var(--sidebar-tab-width)");
     };
