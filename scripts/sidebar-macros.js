@@ -21,6 +21,9 @@ Hooks.on("renderSidebar", (_app, html) => {
     // Calculate new tab width
     html[0].querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width",
         Math.floor(parseInt(getComputedStyle(html[0]).getPropertyValue("--sidebar-width")) / (document.querySelector("#sidebar-tabs").childElementCount + 1)) - 1 + "px");
+
+    // Create Macro tab
+    createTab();
 });
 
 // Hook into the sidebar tab rendering
@@ -37,7 +40,7 @@ Hooks.on("renderHotbar", (_app, html) => {
     // Remove default Macro directory button
     html[0].querySelector("#macro-directory").style.display = "none";
 
-    // If enabled, close the hotbar
+    // If enabled, hide the hotbar
     if (game.settings.get("sidebar-macros", "hideMacroHotbar")) html[0].style.display = "none";
 });
 
@@ -54,7 +57,12 @@ const createDirectory = html => {
 
     // Make the directory display properly and not all of the time
     html.style.display = "";
+};
 
+/**
+ * Create the Macro tab in the sidebar
+ */
+const createTab = () => {
     // Create Macros tab
     const tab = document.createElement("a");
     tab.classList.add("item");
