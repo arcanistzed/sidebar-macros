@@ -109,3 +109,21 @@ class MacroSidebarDirectory extends SidebarDirectory {
     /** @override */
     static documentName = "Macro";
 }
+
+MacroSidebarDirectory.prototype._getEntryContextOptions = function newMacroContext() {
+    const options = SidebarDirectory.prototype._getEntryContextOptions.call(this);
+    return [
+        {
+            name: "Execute",
+            icon: `<i class="fas fa-terminal"></i>`,
+            condition: li => {
+                const macro = game.macros.get(li.data("entityId"));
+                return macro.data.img !== CONST.DEFAULT_TOKEN;
+            },
+            callback: li => {
+                const macro = game.macros.get(li.data("entityId"));
+                macro.execute();
+            }
+        }
+    ].concat(options);
+}
