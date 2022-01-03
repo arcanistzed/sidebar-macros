@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.5.0 - 3 Jan 2022
+
+### Added
+
+Context Menu option to Execute the macro (#6)
+
 ## 0.4.1 - 20 Nov 2021
 
 ### Fixed
