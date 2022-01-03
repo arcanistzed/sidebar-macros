@@ -89,7 +89,7 @@ Hooks.on('renderMacroSidebarDirectory', (...args) => {
 });
 
 
-// The following code was largely taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
+// The following code up to line 110 was mostly taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
 /**
  * The directory, displayed in the Sidebar, which organizes and displays world-level Macro documents.
  * @extends {SidebarDirectory}
@@ -104,8 +104,27 @@ class MacroSidebarDirectory extends SidebarDirectory {
         super(options);
         ui.sidebar.tabs.macros = this;
         game.macros.apps.push(this);
-    }
+    };
 
     /** @override */
     static documentName = "Macro";
-}
+
+    /** @override */
+    _getEntryContextOptions() {
+        let options = super._getEntryContextOptions();
+        return [
+            {
+                name: "Execute",
+                icon: `<i class="fas fa-terminal"></i>`,
+                condition: data => {
+                    const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
+                    return macro.data.type === "script" && macro.testUserPermission(game.user, CONST.ENTITY_PERMISSIONS.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER);
+                },
+                callback: data => {
+                    const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
+                    macro.execute();
+                }
+            }
+        ].concat(options);
+    };
+};
