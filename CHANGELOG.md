@@ -1,8 +1,8 @@
 # Changelog
 
-## 0.4.1
+## 0.4.1 - 20 Nov 2021
 
-## Fixed
+### Fixed
 
 Fixed version check for v9, causing external CSS variable changes to have no effect
 
