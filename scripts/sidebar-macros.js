@@ -38,7 +38,8 @@ Hooks.on("renderSidebarTab", (doc, html) => {
 // Hook into the macro hotbar rendering
 Hooks.on("renderHotbar", (_app, html) => {
     // Remove default Macro directory button
-    html[0].querySelector("#macro-directory").style.display = "none";
+    const directory = html[0].querySelector("#macro-directory, #custom-macro-directory");
+    if (directory) directory.style.display = "none";
 
     // If enabled, hide the hotbar
     if (game.settings.get("sidebar-macros", "hideMacroHotbar")) html[0].style.display = "none";

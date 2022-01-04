@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1 - 4 Jan 2022
+
+Compatibility with Custom Hotbar
+
 ## 0.5.0 - 3 Jan 2022
 
 ### Added
