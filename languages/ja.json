@@ -1,0 +1,9 @@
+{
+    "sidebar-macros": {
+        "settings": {
+            "hideMacroHotbar": {
+                "Name": "マクロのショートカットバーを非表示"
+            }
+        }
+    }
+}
