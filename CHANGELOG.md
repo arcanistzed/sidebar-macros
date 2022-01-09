@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0 - 8 Jan 2022
+
+Japanese localization (thanks to @BrotherSharper) #10
+
 ## 0.5.1 - 4 Jan 2022
 
 Compatibility with Custom Hotbar
