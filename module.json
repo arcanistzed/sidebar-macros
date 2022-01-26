@@ -2,10 +2,6 @@
   "name": "sidebar-macros",
   "title": "Sidebar Macros",
   "description": "Add Macros to the Foundry VTT sidebar!",
-  "version": "This is auto replaced",
-  "manifestPlusVersion": "1.2.0",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": 9,
   "author": "Arcanist",
   "authors": [
     {
@@ -16,6 +12,17 @@
       "reddit": "u/arcanistzed"
     }
   ],
+  "url": "This is auto replaced",
+  "license": "https://github.com/arcanistzed/sidebar-macros/blob/main/LICENSE",
+  "readme": "https://github.com/arcanistzed/sidebar-macros/blob/main/README.md",
+  "bugs": "https://github.com/arcanistzed/sidebar-macros/issues/new/choose",
+  "changelog": "https://github.com/arcanistzed/sidebar-macros/blob/main/CHANGELOG.md",
+  "flags": {
+    "allowBugReporter": true
+  },
+  "version": "This is auto replaced",
+  "minimumCoreVersion": "0.7.9",
+  "compatibleCoreVersion": 9,
   "scripts": [
     "scripts/sidebar-macros.js"
   ],
@@ -31,13 +38,9 @@
       "path": "languages/ja.json"
     }
   ],
-  "url": "This is auto replaced",
   "manifest": "This is auto replaced",
   "download": "This is auto replaced",
-  "readme": "https://github.com/arcanistzed/sidebar-macros/blob/main/README.md",
-  "changelog": "https://github.com/arcanistzed/sidebar-macros/blob/main/CHANGELOG.md",
-  "license": "https://github.com/arcanistzed/sidebar-macros/blob/main/LICENSE",
-  "bugs": "https://github.com/arcanistzed/sidebar-macros/issues/new/choose",
+  "manifestPlusVersion": "1.2.0",
   "media": [
     {
       "type": "screenshot",
