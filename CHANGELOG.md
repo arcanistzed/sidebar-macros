@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.0 - 31 Jan 2022
+
+Calls the default Macro Directory `render` hook to help avoid incompatibilities
+
 ## 0.6.0 - 8 Jan 2022
 
 Japanese localization (thanks to @BrotherSharper) #10
