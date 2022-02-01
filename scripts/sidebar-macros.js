@@ -129,3 +129,6 @@ class MacroSidebarDirectory extends SidebarDirectory {
         ].concat(options);
     };
 };
+
+// Call default render hook
+Hooks.on("renderMacroSidebarDirectory", (...args) => Hooks.callAll("renderMacroDirectory", ...args));
