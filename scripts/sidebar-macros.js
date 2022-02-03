@@ -1,7 +1,7 @@
 // Register settings
 Hooks.on("init", () => {
     game.settings.register("sidebar-macros", "hideMacroHotbar", {
-        name: game.i18n.localize("sidebar-macros.settings.hideMacroHotbar.Name"),
+        name: "sidebar-macros.settings.hideMacroHotbar.Name",
         scope: "client",
         config: true,
         type: Boolean,
