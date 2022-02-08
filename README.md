@@ -10,11 +10,9 @@ Add Macros to the Foundry VTT sidebar!
 
 In the setup screen, use the URL `https://github.com/arcanistzed/sidebar-macros/releases/latest/download/module.json` to install the module.
 
-## License
+## Support
 
-Copyright © 2021 arcanist
-
-This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
+Please consider supporting me on [my Patreon](https://patreon.com/arcanistzed) if you like my work. You can see a list of all my projects on [my website](https://arcanist.me).
 
 ## Bugs
 
@@ -23,3 +21,9 @@ You can submit bugs via [Github Issues](https://github.com/arcanistzed/sidebar-m
 ## Contact me
 
 Come hang out on my [my Discord server](https://discord.gg/AAkZWWqVav) or [click here to send me an email](mailto:arcanistzed@gmail.com?subject=Sidebar%20Macros%20module%20for%20Foundry%20VTT).
+
+## License
+
+Copyright © 2021 arcanist
+
+This package is under an [MIT license](LICENSE) and the [Foundry Virtual Tabletop Limited License Agreement for module development](https://foundryvtt.com/article/license/).
