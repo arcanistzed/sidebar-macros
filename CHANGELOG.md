@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.7.1 - 12 Feb 2022
+
+0.7.x support
+
 ## 0.7.0 - 31 Jan 2022
 
 Calls the default Macro Directory `render` hook to help avoid incompatibilities
