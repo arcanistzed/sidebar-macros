@@ -103,12 +103,21 @@ Hooks.on('renderMacroSidebarDirectory', (...args) => {
 class MacroSidebarDirectory extends SidebarDirectory {
     constructor(options = {}) {
         super(options);
-        ui.sidebar.tabs.macros = this;
+        if (ui.sidebar) ui.sidebar.tabs.macros = this;
         game.macros.apps.push(this);
     };
 
     /** @override */
     static documentName = "Macro";
+
+    /** @override */
+    static get entity() {
+        return "Macro";
+    }
+    /** @override */
+    static get collection() {
+        return game.macros;
+    }
 
     /** @override */
     _getEntryContextOptions() {
@@ -119,7 +128,7 @@ class MacroSidebarDirectory extends SidebarDirectory {
                 icon: `<i class="fas fa-terminal"></i>`,
                 condition: data => {
                     const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
-                    return macro.data.type === "script" && macro.testUserPermission(game.user, CONST.ENTITY_PERMISSIONS.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER);
+                    return macro.data.type === "script" && (macro.permission === CONST.ENTITY_PERMISSIONS.OWNER || macro.testUserPermission(game.user, CONST.ENTITY_PERMISSIONS.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER));
                 },
                 callback: data => {
                     const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
