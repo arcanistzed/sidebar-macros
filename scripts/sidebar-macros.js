@@ -16,7 +16,7 @@ Hooks.on("renderSidebar", (_app, html) => {
     if ((game.version && !isNewerVersion(game.version, 9)) ?? true) {
         html[0].style.setProperty("--sidebar-width", getComputedStyle(html[0]).width);
         html[0].querySelectorAll("#sidebar-tabs > .item ").forEach(el => el.style.flex = "0 0 var(--sidebar-tab-width)");
-    };
+    }
 
     // Calculate new tab width
     html[0].querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width",
@@ -32,7 +32,7 @@ Hooks.on("renderSidebarTab", (doc, html) => {
     if (doc.tabName === "macros") {
         // Create the Macro directory
         createDirectory(html[0]);
-    };
+    }
 });
 
 // Hook into the macro hotbar rendering
@@ -58,7 +58,7 @@ const createDirectory = html => {
 
     // Make the directory display properly and not all of the time
     html.style.display = "";
-};
+}
 
 /**
  * Create the Macro tab in the sidebar
@@ -77,16 +77,16 @@ const createTab = () => {
 
     // Add Macro tab to sidebar before compendiums if it's not already there
     if (!document.querySelector("#sidebar-tabs > [data-tab='macros']")) document.querySelector("#sidebar-tabs > [data-tab='compendium']").before(tab);
-};
+}
 
 // Override default macro class as the UI for macros
 Hooks.on("init", () => CONFIG.ui.macros = MacroSidebarDirectory);
 
 // Register with Permission Viewer
-Hooks.on('renderMacroSidebarDirectory', (...args) => {
+Hooks.on("renderMacroSidebarDirectory", (...args) => {
     if (game.modules.get("permission_viewer")?.active) {
         PermissionViewer.directoryRendered(...args);
-    };
+    }
 });
 
 
@@ -105,7 +105,7 @@ class MacroSidebarDirectory extends SidebarDirectory {
         super(options);
         if (ui.sidebar) ui.sidebar.tabs.macros = this;
         game.macros.apps.push(this);
-    };
+    }
 
     /** @override */
     static documentName = "Macro";
@@ -136,8 +136,8 @@ class MacroSidebarDirectory extends SidebarDirectory {
                 }
             }
         ].concat(options);
-    };
-};
+    }
+}
 
 // Call default render hook
 Hooks.on("renderMacroSidebarDirectory", (...args) => Hooks.callAll("renderMacroDirectory", ...args));
