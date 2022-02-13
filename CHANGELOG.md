@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.7.1 - 12 Feb 2022
+## 0.7.2 - 12 Feb 2022
 
 0.7.x support
 

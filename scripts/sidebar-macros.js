@@ -18,6 +18,9 @@ Hooks.on("renderSidebar", (_app, html) => {
         html[0].querySelectorAll("#sidebar-tabs > .item ").forEach(el => el.style.flex = "0 0 var(--sidebar-tab-width)");
     }
 
+    // Render the macro sidebar directory (needed for 0.7.x)
+    ui.macros.render(true);
+
     // Calculate new tab width
     html[0].querySelector("#sidebar-tabs").style.setProperty("--sidebar-tab-width",
         Math.floor(parseInt(getComputedStyle(html[0]).getPropertyValue("--sidebar-width")) / (document.querySelector("#sidebar-tabs").childElementCount + 1)) - 1 + "px");
