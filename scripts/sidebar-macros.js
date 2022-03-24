@@ -1,6 +1,10 @@
 // Register settings
 Hooks.on("init", () => {
-    game.settings.register("sidebar-macros", "hideMacroHotbar", {
+    const SM = {
+        ID: "sidebar-macros",
+    }
+
+    game.settings.register(SM.ID, "hideMacroHotbar", {
         name: "sidebar-macros.settings.hideMacroHotbar.Name",
         scope: "client",
         config: true,
@@ -45,7 +49,7 @@ Hooks.on("renderHotbar", (_app, html) => {
     if (directory) directory.style.display = "none";
 
     // If enabled, hide the hotbar
-    if (game.settings.get("sidebar-macros", "hideMacroHotbar")) html[0].style.display = "none";
+    if (game.settings.get(SM.ID, "hideMacroHotbar")) html[0].style.display = "none";
 });
 
 /**
