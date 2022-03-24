@@ -23,7 +23,7 @@
   "version": "This is auto replaced",
   "minimumCoreVersion": "0.7.9",
   "compatibleCoreVersion": "9",
-  "scripts": [
+  "esmodules": [
     "scripts/sidebar-macros.js"
   ],
   "languages": [
