@@ -70,8 +70,11 @@ const createTab = () => {
     // Create Macros tab
     const tab = document.createElement("a");
     tab.classList.add("item");
-    tab.title = "Macros";
     tab.dataset.tab = "macros";
+    tab.dataset.tooltip = "DOCUMENT.Macros";
+
+    // Add a title if tooltips don't exist
+    if (!("tooltip" in game)) tab.title = "Macros";
 
     // Add icon for tab
     const icon = document.createElement("i");
@@ -123,6 +126,14 @@ class MacroSidebarDirectory extends SidebarDirectory {
     }
 
     /** @override */
+    activateListeners(html) {
+        super.activateListeners(html);
+        html[0]
+			.querySelectorAll(".directory-list .thumbnail, .directory-list .profile")
+			.forEach(el => el.addEventListener("click", this._onClickThumbnail.bind(this)));
+    }
+
+    /** @override */
     _getEntryContextOptions() {
         let options = super._getEntryContextOptions();
         return [
@@ -139,6 +150,19 @@ class MacroSidebarDirectory extends SidebarDirectory {
                 }
             }
         ].concat(options);
+    }
+
+    /**
+     * Handle clicking on a Document thumbnail in the Macro Sidebar directory
+     * @param {Event} event   The originating click event
+     * @protected
+     */
+    _onClickThumbnail(event) {
+        event.preventDefault();
+        const element = event.currentTarget;
+        const documentId = element.parentElement.dataset.documentId ?? element.parentElement.dataset.entityId;
+        const document = this.constructor.collection.get(documentId);
+        document.execute();
     }
 }
 
