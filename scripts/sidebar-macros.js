@@ -10,7 +10,7 @@ Hooks.on("init", () => {
         config: true,
         type: Boolean,
         default: true,
-        onChange: () => { ui.hotbar.render() },
+        onChange: () => { ui.hotbar.render(); },
     });
 
     game.settings.register(SM.ID, "clickExecute", {
@@ -19,7 +19,7 @@ Hooks.on("init", () => {
         config: true,
         type: Boolean,
         default: true,
-        onChange: () => { ui.hotbar.render() },
+		onChange: () => { ui.hotbar.render(); },
     });
 
     game.settings.register(SM.ID, "hideDirectoryButton", {
@@ -29,9 +29,7 @@ Hooks.on("init", () => {
 		config: true,
 		type: Boolean,
 		default: false,
-		onChange: () => {
-			ui.hotbar.render();
-		},
+		onChange: () => { ui.hotbar.render(); },
 	});
 });
 
