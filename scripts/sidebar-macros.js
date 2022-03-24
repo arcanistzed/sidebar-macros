@@ -12,6 +12,18 @@ Hooks.on("init", () => {
         default: true,
         onChange: () => { ui.hotbar.render() },
     });
+
+    game.settings.register(SM.ID, "hideDirectoryButton", {
+		name: "sidebar-macros.settings.hideDirectoryButton.name",
+		hint: "sidebar-macros.settings.hideDirectoryButton.hint",
+		scope: "client",
+		config: true,
+		type: Boolean,
+		default: false,
+		onChange: () => {
+			ui.hotbar.render();
+		},
+	});
 });
 
 // Hook into the sidebar rendering
@@ -46,7 +58,14 @@ Hooks.on("renderSidebarTab", (doc, html) => {
 Hooks.on("renderHotbar", (_app, html) => {
     // Remove default Macro directory button
     const directory = html[0].querySelector("#macro-directory, #custom-macro-directory");
-    if (directory) directory.style.display = "none";
+
+    if (directory && game.settings.get(SM.ID, "hideDirectoryButton")) 
+        directory.style.display = "none";
+    else directory.addEventListener("click", event => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        ui.sidebar.activateTab("macros");
+    }, true);
 
     // If enabled, hide the hotbar
     if (game.settings.get(SM.ID, "hideMacroHotbar")) html[0].style.display = "none";

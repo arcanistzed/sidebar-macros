@@ -3,6 +3,10 @@
         "settings": {
             "hideMacroHotbar": {
                 "Name": "Hide Macro Hotbar"
+            },
+            "hideDirectoryButton": {
+                "name": "Hide Macro Directory button",
+                "hint": "Hide the default button in the hotbar. Otherwise, clicking on it will navigate to the Sidebar Macros sidebar tab."
             }
         }
     }
