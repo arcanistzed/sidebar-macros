@@ -1,7 +1,7 @@
-    const SM = {
-        ID: "sidebar-macros",
-    }
-
+const SM = {
+    ID: "sidebar-macros",
+}
+    
 // Register settings
 Hooks.on("init", () => {
     game.settings.register(SM.ID, "hideMacroHotbar", {
@@ -13,15 +13,15 @@ Hooks.on("init", () => {
         onChange: () => { ui.hotbar.render(); },
     });
 
-    game.settings.register(SM.ID, "clickExecute", {
-        name: "sidebar-macros.settings.clickExecute.name",
-		hint: "sidebar-macros.settings.clickExecute.hint",
-        scope: "client",
-        config: true,
-        type: Boolean,
-        default: true,
+    game.settings.r
+		default: true,
 		onChange: () => { ui.macros.render(); },
-    });
+	});egister(SM.ID, "clickExecute", {
+		name: "sidebar-macros.settings.clickExecute.name",
+		hint: "sidebar-macros.settings.clickExecute.hint",
+		scope: "client",
+		config: true,
+		type: Boolean,
 
     game.settings.register(SM.ID, "hideDirectoryButton", {
 		name: "sidebar-macros.settings.hideDirectoryButton.name",
@@ -161,7 +161,10 @@ class MacroSidebarDirectory extends SidebarDirectory {
         super.activateListeners(html);
         if (game.settings.get(SM.ID, "clickExecute")) html[0]
 			.querySelectorAll(".directory-list .thumbnail, .directory-list .profile")
-			.forEach(el => el.addEventListener("click", this._onClickThumbnail.bind(this)));
+            .forEach(el => {
+                el.classList.add("sidebar-macros-execute");
+                el.addEventListener("click", this._onClickThumbnail.bind(this));
+            });
     }
 
     /** @override */
