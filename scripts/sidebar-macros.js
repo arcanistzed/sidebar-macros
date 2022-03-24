@@ -15,6 +15,7 @@ Hooks.on("init", () => {
 
     game.settings.register(SM.ID, "clickExecute", {
         name: "sidebar-macros.settings.clickExecute.name",
+		hint: "sidebar-macros.settings.clickExecute.hint",
         scope: "client",
         config: true,
         type: Boolean,
