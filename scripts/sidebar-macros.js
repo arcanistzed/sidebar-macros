@@ -13,6 +13,15 @@ Hooks.on("init", () => {
         onChange: () => { ui.hotbar.render() },
     });
 
+    game.settings.register(SM.ID, "clickExecute", {
+        name: "sidebar-macros.settings.clickExecute.name",
+        scope: "client",
+        config: true,
+        type: Boolean,
+        default: true,
+        onChange: () => { ui.hotbar.render() },
+    });
+
     game.settings.register(SM.ID, "hideDirectoryButton", {
 		name: "sidebar-macros.settings.hideDirectoryButton.name",
 		hint: "sidebar-macros.settings.hideDirectoryButton.hint",
@@ -151,7 +160,7 @@ class MacroSidebarDirectory extends SidebarDirectory {
     /** @override */
     activateListeners(html) {
         super.activateListeners(html);
-        html[0]
+        if (game.settings.get(SM.ID, "clickExecute")) html[0]
 			.querySelectorAll(".directory-list .thumbnail, .directory-list .profile")
 			.forEach(el => el.addEventListener("click", this._onClickThumbnail.bind(this)));
     }

@@ -7,6 +7,9 @@
             "hideDirectoryButton": {
                 "name": "Hide Macro Directory button",
                 "hint": "Hide the default button in the hotbar. Otherwise, clicking on it will navigate to the Sidebar Macros sidebar tab."
+            },
+            "clickExecute": {
+                "name": "Click icon in sidebar to execute macros"
             }
         }
     }
