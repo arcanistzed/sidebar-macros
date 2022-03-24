@@ -19,7 +19,7 @@ Hooks.on("init", () => {
         config: true,
         type: Boolean,
         default: true,
-		onChange: () => { ui.hotbar.render(); },
+		onChange: () => { ui.macros.render(); },
     });
 
     game.settings.register(SM.ID, "hideDirectoryButton", {
