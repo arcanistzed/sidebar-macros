@@ -1,9 +1,9 @@
-// Register settings
-Hooks.on("init", () => {
     const SM = {
         ID: "sidebar-macros",
     }
 
+// Register settings
+Hooks.on("init", () => {
     game.settings.register(SM.ID, "hideMacroHotbar", {
         name: "sidebar-macros.settings.hideMacroHotbar.Name",
         scope: "client",
