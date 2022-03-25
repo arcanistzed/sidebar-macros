@@ -13,15 +13,15 @@ Hooks.on("init", () => {
         onChange: () => { ui.hotbar.render(); },
     });
 
-    game.settings.r
-		default: true,
-		onChange: () => { ui.macros.render(); },
-	});egister(SM.ID, "clickExecute", {
+    game.settings.register(SM.ID, "clickExecute", {
 		name: "sidebar-macros.settings.clickExecute.name",
 		hint: "sidebar-macros.settings.clickExecute.hint",
 		scope: "client",
 		config: true,
 		type: Boolean,
+		default: true,
+		onChange: () => { ui.macros.render(); },
+	});
 
     game.settings.register(SM.ID, "hideDirectoryButton", {
 		name: "sidebar-macros.settings.hideDirectoryButton.name",
