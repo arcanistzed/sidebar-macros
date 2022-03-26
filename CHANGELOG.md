@@ -7,9 +7,9 @@
 
 ### Added
 
-* Clicking the Macro Directory button in the hotbar opens the Macro Sidebar tab ([#11](https://github.com/arcanistzed/sidebar-macros/issues/11)
+* Clicking the Macro Directory button in the hotbar opens the Macro Sidebar tab ([#11](https://github.com/arcanistzed/sidebar-macros/issues/11))
 * Option to hide the Macro Directory button (now disabled by default)
-* Option to enable clicking on the icon of Macros in the sidebar to execute them ([#11](https://github.com/arcanistzed/sidebar-macros/issues/11)
+* Option to enable clicking on the icon of Macros in the sidebar to execute them ([#11](https://github.com/arcanistzed/sidebar-macros/issues/11))
 
 ## 0.7.2 - 12 Feb 2022
 
