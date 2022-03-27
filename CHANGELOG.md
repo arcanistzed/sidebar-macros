@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.1 - 26 Mar 2022
+
+Fixed compatibility with Compendium Folders
+
 ## 0.8.0 - 25 Mar 2022
 
 * Compatibility with v10 tooltips

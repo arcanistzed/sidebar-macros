@@ -225,6 +225,7 @@ class MacroSidebarDirectory extends SidebarDirectory {
 		document.execute();
 	}
 }
+globalThis.MacroSidebarDirectory = MacroSidebarDirectory;
 
 // Call default render hook
 Hooks.on("renderMacroSidebarDirectory", (...args) => Hooks.callAll("renderMacroDirectory", ...args));
