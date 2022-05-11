@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.2 - 9 May 2022
+
+Restored compatibility with Firefox
+
 ## 0.8.1 - 26 Mar 2022
 
 Fixed compatibility with Compendium Folders

@@ -58,12 +58,10 @@ Hooks.on("renderSidebar", (_app, html) => {
 		.querySelector("#sidebar-tabs")
 		.style.setProperty(
 			"--sidebar-tab-width",
-			CSS.px(
-				Math.floor(
-					parseInt(getComputedStyle(html[0]).getPropertyValue("--sidebar-width")) /
-						(document.querySelector("#sidebar-tabs").childElementCount + 1)
-				)
-			)
+			`${Math.floor(
+				parseInt(getComputedStyle(html[0]).getPropertyValue("--sidebar-width")) /
+					(document.querySelector("#sidebar-tabs").childElementCount + 1)
+			)}px`
 		);
 
 	// Create Macro tab
