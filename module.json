@@ -1,63 +1,63 @@
 {
-  "id": "sidebar-macros",
-  "name": "sidebar-macros",
-  "title": "Sidebar Macros",
-  "description": "Add Macros to the Foundry VTT sidebar!",
-  "authors": [
-    {
-      "name": "Arcanist",
-      "url": "https://arcanist.me",
-      "email": "arcanistzed@gmail.com",
-      "discord": "arcanist#4317",
-      "reddit": "u/arcanistzed"
-    }
-  ],
-  "url": "This is auto replaced",
-  "license": "https://github.com/arcanistzed/sidebar-macros/blob/main/LICENSE",
-  "readme": "https://github.com/arcanistzed/sidebar-macros/blob/main/README.md",
-  "bugs": "https://github.com/arcanistzed/sidebar-macros/issues/new/choose",
-  "changelog": "https://github.com/arcanistzed/sidebar-macros/blob/main/CHANGELOG.md",
-  "flags": {
-    "allowBugReporter": true
-  },
-  "version": "This is auto replaced",
-  "compatibility": {
-    "minimum": "0.7.9",
-    "verified": "10"
-  },
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "10",
-  "esmodules": [
-    "scripts/sidebar-macros.js"
-  ],
-  "styles": [
-    "styles/sidebar-macros.css"
-  ],
-  "languages": [
-    {
-      "lang": "en",
-      "name": "English",
-      "path": "languages/en.json"
+    "id": "sidebar-macros",
+    "name": "sidebar-macros",
+    "title": "Sidebar Macros",
+    "description": "Add Macros to the Foundry VTT sidebar!",
+    "authors": [
+        {
+            "name": "Arcanist",
+            "url": "https://arcanist.me",
+            "email": "arcanistzed@gmail.com",
+            "discord": "arcanist#4317",
+            "reddit": "u/arcanistzed"
+        }
+    ],
+    "url": "This is auto replaced",
+    "license": "https://github.com/arcanistzed/sidebar-macros/blob/main/LICENSE",
+    "readme": "https://github.com/arcanistzed/sidebar-macros/blob/main/README.md",
+    "bugs": "https://github.com/arcanistzed/sidebar-macros/issues/new/choose",
+    "changelog": "https://github.com/arcanistzed/sidebar-macros/blob/main/CHANGELOG.md",
+    "flags": {
+        "allowBugReporter": true
     },
-    {
-      "lang": "ja",
-      "name": "日本語",
-      "path": "languages/ja.json"
-    }
-  ],
-  "manifest": "This is auto replaced",
-  "download": "This is auto replaced",
-  "manifestPlusVersion": "1.2.0",
-  "media": [
-    {
-      "type": "screenshot",
-      "url": "https://i.imgur.com/b4GWLoz.png",
-      "caption": "The macro directory in the sidebar, the context menu, and the editor window."
+    "version": "This is auto replaced",
+    "compatibility": {
+        "minimum": "0.7.9",
+        "verified": "10"
     },
-    {
-      "type": "cover",
-      "url": "https://i.imgur.com/QpsAvuw.png",
-      "caption": "Macros in the Sidebar"
-    }
-  ]
+    "minimumCoreVersion": "0.7.9",
+    "compatibleCoreVersion": "10",
+    "esmodules": [
+        "scripts/sidebar-macros.js"
+    ],
+    "styles": [
+        "styles/sidebar-macros.css"
+    ],
+    "languages": [
+        {
+            "lang": "en",
+            "name": "English",
+            "path": "languages/en.json"
+        },
+        {
+            "lang": "ja",
+            "name": "日本語",
+            "path": "languages/ja.json"
+        }
+    ],
+    "manifest": "This is auto replaced",
+    "download": "This is auto replaced",
+    "manifestPlusVersion": "1.2.0",
+    "media": [
+        {
+            "type": "screenshot",
+            "url": "https://i.imgur.com/b4GWLoz.png",
+            "caption": "The macro directory in the sidebar, the context menu, and the editor window."
+        },
+        {
+            "type": "cover",
+            "url": "https://i.imgur.com/QpsAvuw.png",
+            "caption": "Macros in the Sidebar"
+        }
+    ]
 }
