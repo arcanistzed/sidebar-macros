@@ -1,0 +1,17 @@
+{
+	"sidebar-macros": {
+		"settings": {
+			"hideMacroHotbar": {
+				"Name": "Ocultar Barra de Macros"
+			},
+			"hideDirectoryButton": {
+				"name": "Ocultar Boton de Directorio de Macros",
+				"hint": "Oculta el Botón de Directorios de Macros por defecto en la Barra. De otra forma, la barra es visible. Hacer click en él, permite navegar la Barra Lateral de Macros."
+			},
+			"clickExecute": {
+				"name": "Hacer Click en Barra Lateral para Ejecutar",
+				"hint": "Esta opción permite hacer click en los iconos de Macros de la Barra Lateral."
+			}
+		}
+	}
+}
