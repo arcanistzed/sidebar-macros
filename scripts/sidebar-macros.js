@@ -140,7 +140,7 @@ Hooks.on("init", () => (CONFIG.ui.macros = MacroSidebarDirectory));
 
 // Register with Permission Viewer
 Hooks.on("renderMacroSidebarDirectory", (...args) => {
-	if (game.modules.get("permission_viewer")?.active) {
+	if (game.modules.get("permission_viewer")?.active && game.modules.get("permission_viewer")?.version < '0.10.0') {
 		PermissionViewer.directoryRendered(...args);
 	}
 });
