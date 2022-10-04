@@ -195,10 +195,10 @@ class MacroSidebarDirectory extends SidebarDirectory {
 					const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
 					return (
 						macro.data.type === "script" &&
-						(macro.permission === CONST.ENTITY_PERMISSIONS.OWNER ||
+						(macro.permission === (CONST.ENTITY_PERMISSIONS?.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER) ||
 							macro.testUserPermission(
 								game.user,
-								CONST.ENTITY_PERMISSIONS.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER
+								CONST.ENTITY_PERMISSIONS?.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER
 							))
 					);
 				},
