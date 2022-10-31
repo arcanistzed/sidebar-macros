@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.8.3 - 31 Oct 2022
+
+* Migrate manifest to v10
+* Spanish localization (thanks to `@ZRAAA78 (Raul)`)
+* Handle deprecated deprecated CONST.ENTITY_PERMISSIONS ([#16](https://github.com/arcanistzed/sidebar-macros/issues/16), [#17](https://github.com/arcanistzed/sidebar-macros/issues/17))
+* Removed no longer necessary permission viewer registration ([#14](https://github.com/arcanistzed/sidebar-macros/issues/14), [#15](https://github.com/arcanistzed/sidebar-macros/issues/15))
+
 ## 0.8.2 - 9 May 2022
 
 Restored compatibility with Firefox
