@@ -138,13 +138,6 @@ const createTab = () => {
 // Override default macro class as the UI for macros
 Hooks.on("init", () => (CONFIG.ui.macros = MacroSidebarDirectory));
 
-// Register with Permission Viewer
-Hooks.on("renderMacroSidebarDirectory", (...args) => {
-	if (game.modules.get("permission_viewer")?.active) {
-		PermissionViewer.directoryRendered(...args);
-	}
-});
-
 // The following code up to line 110 was mostly taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
 /**
  * The directory, displayed in the Sidebar, which organizes and displays world-level Macro documents.
