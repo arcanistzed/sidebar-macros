@@ -1,1 +1,17 @@
-{}
+{
+	"sidebar-macros": {
+		"settings": {
+			"hideMacroHotbar": {
+				"Name": "Masquer la barre d'outils de macros"
+			},
+			"hideDirectoryButton": {
+				"name": "Masquer le bouton du répertoire de macros",
+				"hint": "Masquer le bouton du répertoire des macros par défaut dans la barre d'outils. Si cette option est désactivée et la barre d'outils est visible, le bouton permet de naviguer vers l'onglet Macros dans la barre latérale."
+			},
+			"clickExecute": {
+				"name": "Cliquez sur l'icône dans la barre latérale pour exécuter",
+				"hint": "Cette option permet de cliquer sur les icônes des macros dans la barre latérale pour les exécuter."
+			}
+		}
+	}
+}
