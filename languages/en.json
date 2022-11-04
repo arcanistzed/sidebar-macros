@@ -1,17 +1,17 @@
 {
-    "sidebar-macros": {
-        "settings": {
-            "hideMacroHotbar": {
-                "Name": "Hide Macro Hotbar"
-            },
-            "hideDirectoryButton": {
-                "name": "Hide Macro Directory button",
-                "hint": "Hide the default Macro Directory button in the hotbar. Otherwise, if the hotbar is visible, clicking on it will navigate to the Sidebar Macros sidebar tab."
-            },
-            "clickExecute": {
-                "name": "Click icon in sidebar to execute",
-                "hint": "This option enables clicking on the icons of macros in the sidebar to execute them."
-            }
-        }
-    }
+	"sidebar-macros": {
+		"settings": {
+			"hideMacroHotbar": {
+				"Name": "Hide Macro Hotbar"
+			},
+			"hideDirectoryButton": {
+				"name": "Hide Macro Directory button",
+				"hint": "Hide the default Macro Directory button in the hotbar. If this is disabled and the hotbar is visible, clicking on the button will navigate to the Sidebar Macros sidebar tab."
+			},
+			"clickExecute": {
+				"name": "Click icon in sidebar to execute",
+				"hint": "This option enables clicking on the icons of macros in the sidebar to execute them."
+			}
+		}
+	}
 }
