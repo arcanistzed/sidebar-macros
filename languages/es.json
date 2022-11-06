@@ -6,7 +6,7 @@
 			},
 			"hideDirectoryButton": {
 				"name": "Ocultar Boton de Directorio de Macros",
-				"hint": "Oculta el Botón de Directorios de Macros por defecto en la Barra. De otra forma, la barra es visible. Hacer click en él, permite navegar la Barra Lateral de Macros."
+				"hint": "Oculta el Botón de Directorios de Macros por defecto en la Barra. Si está deshabilitado y la barra es visible, hacer clic en él permitirá navegar la Barra Lateral de Macros."
 			},
 			"clickExecute": {
 				"name": "Hacer Click en Barra Lateral para Ejecutar",
