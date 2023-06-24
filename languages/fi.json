@@ -1,1 +1,17 @@
-{}
+{
+	"sidebar-macros": {
+		"settings": {
+			"hideDirectoryButton": {
+				"hint": "Piilottaa makrohakemisto-painikkeen pikapalkista oletuksena. Jos tämä on poistettu käytöstä ja pikapalkki on näkyvissä, painikkeen napsauttamisella siirrytään Sidebar Macros -välilehdelle sivupalkissa.",
+				"name": "Piilota makrohakemisto -painike"
+			},
+			"hideMacroHotbar": {
+				"Name": "Piilota makropikapalkki"
+			},
+			"clickExecute": {
+				"name": "Napsauta sivupalkin kuvaketta suorittaaksesi",
+				"hint": "Tämä asetus sallii makrojen suorittamisen napsauttamalla niiden kuvakkeita sivupalkissa."
+			}
+		}
+	}
+}
