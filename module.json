@@ -58,6 +58,11 @@
 			"lang": "fi",
 			"name": "Suomi",
 			"path": "languages/fi.json"
+		},
+		{
+			"lang": "cs",
+			"name": "Čeština",
+			"path": "languages/cs.json"
 		}
 	],
 	"manifest": "This is auto replaced",
