@@ -1,1 +1,17 @@
-{}
+{
+	"sidebar-macros": {
+		"settings": {
+			"clickExecute": {
+				"name": "Spusťte kliknutím na ikonu v postranním panelu",
+				"hint": "Tato volba umožňuje kliknutím na ikony maker v postranním panelu jejich spuštění."
+			},
+			"hideMacroHotbar": {
+				"Name": "Skrýt panel rychlých voleb maker"
+			},
+			"hideDirectoryButton": {
+				"name": "Skrýt tlačítko Adresář maker",
+				"hint": "Skrytí výchozího tlačítka Adresář maker na hlavním panelu. Pokud je toto tlačítko zakázáno a panel rychlých voleb je viditelný, kliknutím na tlačítko přejdete na kartu postranního panelu Makra."
+			}
+		}
+	}
+}
