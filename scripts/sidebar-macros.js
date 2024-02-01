@@ -42,17 +42,6 @@ Hooks.on("init", () => {
 
 // Hook into the sidebar rendering
 Hooks.on("renderSidebar", (_app, html) => {
-	// Add CSS variables if not v9
-	if ((game.version && !isNewerVersion(game.version, 9)) ?? true) {
-		html[0].style.setProperty("--sidebar-width", getComputedStyle(html[0]).width);
-		html[0]
-			.querySelectorAll("#sidebar-tabs > .item ")
-			.forEach(el => (el.style.flex = "0 0 var(--sidebar-tab-width)"));
-	}
-
-	// Render the macro sidebar directory (needed for 0.7.x)
-	ui.macros.render(true);
-
 	// Calculate new tab width
 	html[0]
 		.querySelector("#sidebar-tabs")
@@ -71,7 +60,7 @@ Hooks.on("renderSidebar", (_app, html) => {
 // Hook into the sidebar tab rendering
 Hooks.on("renderSidebarTab", (doc, html) => {
 	// If we are rendering the "macros" sidebar tab
-	if (doc.tabName === "macros") {
+	if (doc.tabName === "macros" && !doc.popOut) {
 		// Create the Macro directory
 		createDirectory(html[0]);
 	}
@@ -141,31 +130,16 @@ Hooks.on("init", () => (CONFIG.ui.macros = MacroSidebarDirectory));
 // The following code up to line 110 was mostly taken from `foundry.js` to ensure that this module works and is licensed under the Foundry Virtual Tabletop Limited License Agreement for module development
 /**
  * The directory, displayed in the Sidebar, which organizes and displays world-level Macro documents.
- * @extends {SidebarDirectory}
+ * @extends {DocumentDirectory}
  *
- * @see {@link MacroDirectory}  The Macro Directory not displayed in the Sidebar
- * @see {@link Macros}          The WorldCollection of Macro Entities
- * @see {@link Macro}           The Macro Entity
- * @see {@link MacroConfig}     The Macro Configuration Sheet
+ * @see {MacroDirectory}  The Macro Directory not displayed in the Sidebar
+ * @see {Macros}          The WorldCollection of Macro Entities
+ * @see {Macro}           The Macro Entity
+ * @see {MacroConfig}     The Macro Configuration Sheet
  */
-class MacroSidebarDirectory extends SidebarDirectory {
-	constructor(options = {}) {
-		super(options);
-		if (ui.sidebar) ui.sidebar.tabs.macros = this;
-		game.macros.apps.push(this);
-	}
-
+class MacroSidebarDirectory extends DocumentDirectory {
 	/** @override */
 	static documentName = "Macro";
-
-	/** @override */
-	static get entity() {
-		return "Macro";
-	}
-	/** @override */
-	static get collection() {
-		return game.macros;
-	}
 
 	/** @override */
 	activateListeners(html) {
@@ -186,14 +160,7 @@ class MacroSidebarDirectory extends SidebarDirectory {
 				icon: `<i class="fas fa-terminal"></i>`,
 				condition: data => {
 					const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
-					return (
-						macro.data.type === "script" &&
-						(macro.permission === (CONST.ENTITY_PERMISSIONS?.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER) ||
-							macro.testUserPermission(
-								game.user,
-								CONST.ENTITY_PERMISSIONS?.OWNER ?? CONST.DOCUMENT_PERMISSION_LEVELS.OWNER
-							))
-					);
+					return macro.canExecute;
 				},
 				callback: data => {
 					const macro = game.macros.get(data[0].dataset.entityId || data[0].dataset.documentId);
@@ -212,7 +179,7 @@ class MacroSidebarDirectory extends SidebarDirectory {
 		event.preventDefault();
 		const element = event.currentTarget;
 		const documentId = element.parentElement.dataset.documentId ?? element.parentElement.dataset.entityId;
-		const document = this.constructor.collection.get(documentId);
+		const document = this.collection.get(documentId);
 		document.execute();
 	}
 }

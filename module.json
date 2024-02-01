@@ -1,6 +1,5 @@
 {
 	"id": "sidebar-macros",
-	"name": "sidebar-macros",
 	"title": "Sidebar Macros",
 	"description": "Add Macros to the Foundry VTT sidebar!",
 	"authors": [
@@ -22,11 +21,9 @@
 	},
 	"version": "This is auto replaced",
 	"compatibility": {
-		"minimum": "0.7.9",
-		"verified": "10"
+		"minimum": "11",
+		"verified": "11.315"
 	},
-	"minimumCoreVersion": "0.7.9",
-	"compatibleCoreVersion": "10",
 	"esmodules": [
 		"scripts/sidebar-macros.js"
 	],
