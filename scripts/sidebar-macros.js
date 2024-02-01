@@ -71,7 +71,7 @@ Hooks.on("renderSidebar", (_app, html) => {
 // Hook into the sidebar tab rendering
 Hooks.on("renderSidebarTab", (doc, html) => {
 	// If we are rendering the "macros" sidebar tab
-	if (doc.tabName === "macros") {
+	if (doc.tabName === "macros" && !doc.popOut) {
 		// Create the Macro directory
 		createDirectory(html[0]);
 	}
